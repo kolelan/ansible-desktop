@@ -1,0 +1,6 @@
+---
+- name: Init desktop
+  hosts: all
+  remote_user: prg
+  tasks:
+    - import_tasks: tasks/programs.yml

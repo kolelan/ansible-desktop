@@ -1,0 +1,15 @@
+---
+- name:
+  become: true
+  apt:
+    name:
+      - gnome-tweaks
+    state: present
+    update_cache: yes
+- name: apt install ffmpeg
+  become: true
+  apt:
+    name:
+      - ffmpeg
+    state: present
+    update_cache: yes

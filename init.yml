@@ -1,0 +1,14 @@
+---
+- name: Init desktop
+  hosts: all
+  remote_user: prg
+  tasks:
+    - import_tasks: tasks/interface.yml
+    - import_tasks: tasks/programs.yml
+    - import_tasks: tasks/setup_docker.yml
+  handlers:
+    - name: Start docker on boot
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
